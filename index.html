@@ -84,17 +84,17 @@
 
         .nav-links a:hover { color: var(--accent); }
 
-        .nav-cta {
-            background: var(--accent) !important;
-            color: #0f172a !important;
+        .nav-links a.nav-cta {
+            background: var(--accent);
+            color: #0f172a;
             padding: 0.5rem 1.25rem;
             border-radius: 6px;
-            font-weight: 600 !important;
+            font-weight: 600;
         }
 
-        .nav-cta:hover {
-            background: var(--accent-dark) !important;
-            color: #0f172a !important;
+        .nav-links a.nav-cta:hover {
+            background: var(--accent-dark);
+            color: #0f172a;
             transform: translateY(-1px);
         }
 
@@ -310,7 +310,7 @@
             text-align: center;
         }
 
-        .about-inner p {
+        .about-inner p:not(.section-label) {
             color: var(--text-muted);
             font-size: 1.1rem;
             line-height: 1.85;
@@ -617,7 +617,7 @@
         }
 
         .form-group select {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2394a3b8' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%2394a3b8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 1rem center;
             padding-right: 2.5rem;
@@ -688,10 +688,10 @@
 </head>
 <body>
 
-    <nav id="nav">
+    <nav id="nav" aria-label="Main navigation">
         <div class="nav-inner">
-            <a href="#hero" class="nav-brand">Kevin<span>.</span></a>
-            <ul class="nav-links">
+            <a href="#hero" class="nav-brand">Kevin<span aria-hidden="true">.</span></a>
+            <ul class="nav-links" role="list">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -706,30 +706,30 @@
         <div class="container">
             <div class="hero-grid">
                 <div>
-                    <div class="hero-eyebrow">Available for freelance work</div>
+                    <p class="hero-eyebrow" role="status" aria-live="polite">Available for freelance work</p>
                     <h1 class="hero-name">Kevin Waters</h1>
                     <p class="hero-title">Full-Stack Software Engineer</p>
                     <p class="hero-bio">I build enterprise solutions and custom software that solve real business problems — from Power Platform automation to scalable backend systems.</p>
                     <div class="hero-actions">
-                        <a href="resume.pdf" download class="btn btn-primary">↓ Download Resume</a>
+                        <a href="resume.pdf" download="Kevin-Waters-Resume.pdf" class="btn btn-primary">↓ Download Resume</a>
                         <a href="#contact" class="btn btn-outline">Let's Work Together</a>
                     </div>
-                    <div class="hero-stats">
+                    <dl class="hero-stats">
                         <div>
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">Years Experience</div>
+                            <dd class="stat-number">5+</dd>
+                            <dt class="stat-label">Years Experience</dt>
                         </div>
                         <div>
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">Roles Held</div>
+                            <dd class="stat-number">3</dd>
+                            <dt class="stat-label">Roles Held</dt>
                         </div>
                         <div>
-                            <div class="stat-number">2</div>
-                            <div class="stat-label">Tech Stacks</div>
+                            <dd class="stat-number">2</dd>
+                            <dt class="stat-label">Tech Stacks</dt>
                         </div>
-                    </div>
+                    </dl>
                 </div>
-                <div class="hero-photo-wrap">
+                <div class="hero-photo-wrap" aria-hidden="true">
                     <div class="hero-photo">
                         <!-- To use your headshot, replace this comment with:
                              <img src="headshot.jpg" alt="Kevin Waters"> -->
@@ -746,7 +746,7 @@
     <section id="about">
         <div class="container">
             <div class="about-inner">
-                <p class="section-label">About Me</p>
+                <p class="section-label" aria-hidden="true">About Me</p>
                 <h2 class="section-title">Engineer. Problem Solver. Builder.</h2>
                 <p>I'm a software engineer with 5 years of experience across a broad range of technologies — from low-level systems programming in C and C++ to enterprise Microsoft 365 solutions using Power Platform and SharePoint. I care about writing software that actually solves problems. I'm currently open to freelance engagements alongside my full-time role.</p>
             </div>
@@ -756,52 +756,52 @@
     <!-- Experience -->
     <section id="experience">
         <div class="container">
-            <p class="section-label">Career</p>
+            <p class="section-label" aria-hidden="true">Career</p>
             <h2 class="section-title">Experience</h2>
             <div class="timeline">
 
-                <div class="timeline-item current">
-                    <div class="timeline-dot"></div>
+                <article class="timeline-item current">
+                    <div class="timeline-dot" aria-hidden="true"></div>
                     <div class="timeline-meta">
                         <span class="timeline-date">2023 — Present</span>
                         <span class="badge-current">Current</span>
                     </div>
-                    <div class="timeline-title">Full-Stack Software Engineer</div>
-                    <div class="timeline-company">Booz Allen Hamilton</div>
+                    <h3 class="timeline-title">Full-Stack Software Engineer</h3>
+                    <p class="timeline-company">Booz Allen Hamilton</p>
                     <ul class="timeline-bullets">
                         <li>Build and maintain enterprise applications using Microsoft PowerApps and SharePoint</li>
                         <li>Develop automation workflows and scripts using PowerShell and JavaScript</li>
                         <li>Collaborate with stakeholders to translate business requirements into technical solutions</li>
                     </ul>
-                </div>
+                </article>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
+                <article class="timeline-item">
+                    <div class="timeline-dot" aria-hidden="true"></div>
                     <div class="timeline-meta">
                         <span class="timeline-date">2021 — 2023</span>
                     </div>
-                    <div class="timeline-title">Software Developer</div>
-                    <div class="timeline-company">DKW Communications</div>
+                    <h3 class="timeline-title">Software Developer</h3>
+                    <p class="timeline-company">DKW Communications</p>
                     <ul class="timeline-bullets">
                         <li>Developed internal tools and data processing pipelines using C# and Python</li>
                         <li>Maintained and extended legacy C/C++ systems in a Linux (RHEL) environment</li>
                         <li>Participated in code reviews and contributed to improving team development standards</li>
                     </ul>
-                </div>
+                </article>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
+                <article class="timeline-item">
+                    <div class="timeline-dot" aria-hidden="true"></div>
                     <div class="timeline-meta">
                         <span class="timeline-date">2019 — 2021</span>
                     </div>
-                    <div class="timeline-title">Junior Software Developer</div>
-                    <div class="timeline-company">Innovative Financial Group</div>
+                    <h3 class="timeline-title">Junior Software Developer</h3>
+                    <p class="timeline-company">Innovative Financial Group</p>
                     <ul class="timeline-bullets">
                         <li>Wrote and debugged C and C++ code in a Linux-based (RHEL) development environment</li>
                         <li>Supported senior engineers on system-level software projects</li>
                         <li>Built foundational skills in version control, testing, and the software development lifecycle</li>
                     </ul>
-                </div>
+                </article>
 
             </div>
         </div>
@@ -810,7 +810,7 @@
     <!-- Skills -->
     <section id="skills">
         <div class="container">
-            <p class="section-label">Technical</p>
+            <p class="section-label" aria-hidden="true">Technical</p>
             <h2 class="section-title">Skills</h2>
             <div class="skills-groups">
                 <div class="skill-group">
@@ -856,7 +856,7 @@
     <!-- Services -->
     <section id="services">
         <div class="container">
-            <p class="section-label">Freelance</p>
+            <p class="section-label" aria-hidden="true">Freelance</p>
             <h2 class="section-title">What I Can Build For You</h2>
             <div class="services-grid">
                 <div class="service-card">
@@ -881,23 +881,23 @@
     <!-- Contact -->
     <section id="contact">
         <div class="container">
-            <p class="section-label">Contact</p>
+            <p class="section-label" aria-hidden="true">Contact</p>
             <h2 class="section-title">Let's Work Together</h2>
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Got a project in mind?</h3>
                     <p>Whether you're looking to hire a software engineer or need help with a specific project, I'd love to hear from you. I typically respond within 24 hours.</p>
                     <div class="contact-links">
-                        <a href="https://linkedin.com/in/kevinwaters24" target="_blank" rel="noopener" class="contact-link">
-                            <div class="contact-link-icon">in</div>
+                        <a href="https://linkedin.com/in/kevinwaters24" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <div class="contact-link-icon" aria-hidden="true">in</div>
                             LinkedIn
                         </a>
-                        <a href="https://github.com/watersk24" target="_blank" rel="noopener" class="contact-link">
-                            <div class="contact-link-icon">gh</div>
+                        <a href="https://github.com/watersk24" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <div class="contact-link-icon" aria-hidden="true">gh</div>
                             GitHub
                         </a>
                         <a href="mailto:kwaters7918@gmail.com" class="contact-link">
-                            <div class="contact-link-icon">@</div>
+                            <div class="contact-link-icon" aria-hidden="true">@</div>
                             kwaters7918@gmail.com
                         </a>
                     </div>
@@ -937,13 +937,27 @@
     </footer>
 
     <script>
-        let lastY = 0;
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            const y = window.scrollY;
-            nav.style.transform = (y > lastY && y > 80) ? 'translateY(-100%)' : 'translateY(0)';
-            lastY = y;
-        }, { passive: true });
+        (() => {
+            // Hide/show nav on scroll
+            let lastY = 0;
+            const nav = document.getElementById('nav');
+            window.addEventListener('scroll', () => {
+                const y = window.scrollY;
+                nav.style.transform = (y > lastY && y > 80) ? 'translateY(-100%)' : 'translateY(0)';
+                lastY = y;
+            }, { passive: true });
+
+            // Guard against submitting the form while Formspree ID is still a placeholder
+            const form = document.querySelector('.contact-form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    if (form.action.includes('YOUR_FORM_ID')) {
+                        e.preventDefault();
+                        alert('Contact form is not yet configured. Please reach out directly via email.');
+                    }
+                });
+            }
+        })();
     </script>
 
 </body>
