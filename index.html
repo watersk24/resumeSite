@@ -934,8 +934,7 @@
                         </a>
                     </div>
                 </div>
-                <!-- Formspree: sign up at formspree.io, create a form, then replace YOUR_FORM_ID below -->
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="contact-form" action="https://formspree.io/f/mbdvgell" method="POST">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -979,15 +978,8 @@
                 lastY = y;
             }, { passive: true });
 
-            // Guard against submitting the form while Formspree ID is still a placeholder
             const form = document.querySelector('.contact-form');
             if (form) {
-                form.addEventListener('submit', (e) => {
-                    if (form.action.includes('YOUR_FORM_ID')) {
-                        e.preventDefault();
-                        alert('Contact form is not yet configured. Please reach out directly via email.');
-                    }
-                });
             }
         })();
     </script>
