@@ -1,0 +1,65 @@
+For a new feature
+Use the product-analyst-agent to refine this feature idea into user stories and acceptance criteria:
+[paste idea]
+
+Then:
+
+Use the technical-design-agent to design the implementation approach for the approved story.
+
+Then:
+
+Use the implementation-agent to implement the smallest safe version of this story.
+
+Then:
+
+Use the test-engineer-agent to add tests based on the acceptance criteria.
+
+Then:
+
+Use the code-review-agent to review the current diff.
+
+Then:
+
+Use the security-review-agent to review this change for security risks.
+
+Then:
+
+Use the documentation-agent to update relevant docs.
+
+Then:
+
+Use the release-readiness-agent to perform a final go/no-go review.
+For a small bug
+Use the implementation-agent to fix this bug with the smallest safe change:
+[paste bug]
+
+Then:
+
+Use the test-engineer-agent to add a regression test.
+
+Then:
+
+Use the code-review-agent to review the fix.
+For pre-sprint planning
+Use the scrum-master-agent to break this epic into sprint-sized work and identify dependencies:
+[paste epic]
+
+Best starting order
+
+Do not build all ten and try to use them perfectly on day one.
+
+Start with these six:
+
+product-analyst-agent
+technical-design-agent
+implementation-agent
+test-engineer-agent
+code-review-agent
+security-review-agent
+
+Then add:
+
+devops-ci-agent
+documentation-agent
+release-readiness-agent
+scrum-master-agent
