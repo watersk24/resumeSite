@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; form-action https://formspree.io; connect-src 'none'; frame-ancestors 'none'; base-uri 'self';">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <title>Kevin Waters — Full-Stack Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -957,6 +959,7 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
                     </div>
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                     <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
                 </form>
             </div>
@@ -978,9 +981,6 @@
                 lastY = y;
             }, { passive: true });
 
-            const form = document.querySelector('.contact-form');
-            if (form) {
-            }
         })();
     </script>
 
